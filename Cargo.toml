@@ -2,5 +2,20 @@
 name = "format-as-toon"
 version = "0.1.0"
 edition = "2024"
+description = "Convert JSON to TOON (Token-Oriented Object Notation) — a compact, human-readable format that reduces token usage by 30–60% compared to JSON"
+license = "MIT"
+repository = "https://github.com/toon-format/format-as-toon"
+keywords = ["toon", "json", "serialization", "format", "converter"]
+categories = ["encoding", "command-line-utilities"]
+readme = "README.md"
+
+[lib]
+name = "format_as_toon"
+
+[[bin]]
+name = "format-as-toon"
+path = "src/main.rs"
 
 [dependencies]
+clap = { version = "4", features = ["derive"] }
+serde_json = { version = "1", features = ["preserve_order"] }
